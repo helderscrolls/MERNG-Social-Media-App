@@ -9,3 +9,12 @@
   width: 400px;
   margin: auto;
 }
+
+.post-form-error {
+  position: absolute !important;
+  margin: 0 0 0 40% !important;
+}
+
+.ui.teal.button:focus, ui.teal.buttons .button:focus {
+  background-color: #00b5ad;
+}

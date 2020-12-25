@@ -27,6 +27,9 @@ function PostForm() {
       });
 
       values.body = '';
+    },
+    onError(err) {
+      return err;
     }
   });
 
@@ -35,25 +38,32 @@ function PostForm() {
   }
 
   return (
-    <Form onSubmit={onSubmit}>
-      <h2>Create a post :</h2>
+    <>
+      <Form onSubmit={onSubmit}>
+        <h2>Create a post :</h2>
 
-      <Form.Field>
-        <Form.Input
-          placeholder='Crowdly'
-          name='body'
-          onChange={onChange}
-          value={values.body}
-        />
-
-        <Button
-          type='submit'
-          color='teal'
-        >
-          Submit Post
+        <Form.Field>
+          <Form.Input
+            placeholder='Crowdly'
+            name='body'
+            onChange={onChange}
+            value={values.body}
+            error={error ? true : false}
+          />
+          {error && (
+            <div class="ui basic red pointing prompt label transition visible post-form-error">
+              {error.graphQLErrors[0].message}
+            </div>
+          )}
+          <Button
+            type='submit'
+            color='teal'
+          >
+            Submit Post
         </Button>
-      </Form.Field>
-    </Form >
+        </Form.Field>
+      </Form >
+    </>
   )
 }
 
