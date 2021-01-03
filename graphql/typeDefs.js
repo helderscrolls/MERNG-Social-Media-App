@@ -52,3 +52,5 @@ module.exports = gql`
     newPost: Post!
   }
 `
+
+// TO-DO: createComment Mutation should have a postId: ID! Type not String! Type ;)
