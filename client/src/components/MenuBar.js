@@ -23,6 +23,14 @@ function MenuBar() {
         to='/'
       />
 
+      <Menu.Item
+        name='koji'
+        active={activeItem === 'koji'}
+        onClick={handleItemClick}
+        as={Link}
+        to='/koji'
+      />
+
       <Menu.Menu position='right'>
         <Menu.Item
           name='logout'
@@ -38,6 +46,14 @@ function MenuBar() {
           onClick={handleItemClick}
           as={Link}
           to='/'
+        />
+
+        <Menu.Item
+          name='koji'
+          active={activeItem === 'koji'}
+          onClick={handleItemClick}
+          as={Link}
+          to='/koji'
         />
 
         <Menu.Menu position='right'>
